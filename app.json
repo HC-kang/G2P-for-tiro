@@ -1,0 +1,27 @@
+{
+  "package_id": "com.ford.tiro",
+  "edition": "202601",
+  "name": "G2P for Tiro",
+  "version": "0.1.0",
+  "min_app_version": "2.2.10",
+  "min_sdk_version": "0.0.14",
+  "entrypoint": "index.html",
+  "permissions": [
+    {
+      "name": "network",
+      "desc": "Reads your Tiro notes (Tiro MCP) and transcribes voice search queries (Groq), both with your own API keys.",
+      "whitelist": [
+        "https://mcp.tiro.ooo",
+        "https://api.groq.com"
+      ]
+    },
+    {
+      "name": "g2-microphone",
+      "desc": "Records a short spoken query for voice search. Audio is sent to Groq only while you search."
+    }
+  ],
+  "supported_languages": [
+    "en",
+    "ko"
+  ]
+}

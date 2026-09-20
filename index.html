@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>G2P for Tiro</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        /* ER brand dark-theme surface (#232323) + Neutral-200 text (#E5E5E5). */
+        background: #232323;
+        color: #E5E5E5;
+        font: 14px/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        /* Kill WebView zoom + iOS auto-sizing + rubber-band scroll. */
+        touch-action: manipulation;
+        -webkit-text-size-adjust: 100%;
+        overscroll-behavior: none;
+      }
+      #app {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="app">
+      <div>
+        <p>Tiro API key (platform.tiro.ooo/me/api-keys)<br />읽기 전용 scope를 권장합니다: note:read, note_summary:read</p>
+        <input id="key" type="password" autocomplete="off" placeholder="abc123.xR7mK9..." style="width: 100%; padding: 10px; box-sizing: border-box" />
+        <p>Groq API key (선택, 음성 검색용 · console.groq.com/keys)</p>
+        <input id="groq" type="password" autocomplete="off" placeholder="gsk_..." style="width: 100%; padding: 10px; box-sizing: border-box" />
+        <p style="opacity: 0.7">빈 칸은 저장된 key를 그대로 둡니다.</p>
+        <button style="margin-top: 12px; padding: 10px 24px">저장</button>
+        <button id="clear" type="button" style="margin-top: 12px; padding: 10px 24px">key 모두 삭제</button>
+        <p id="status"></p>
+      </div>
+    </form>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
